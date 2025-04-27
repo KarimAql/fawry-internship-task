@@ -144,7 +144,7 @@ Since DNS resolution failed, I attempted to verify service reachability:
 curl http://internal.example.com
 curl https://internal.example.com
 ```
-![curl](curl.png
+![curl](curl.png)
 ### Findings:
 
 -   All attempts to connect failed with "Could not resolve host" errors.
