@@ -98,6 +98,9 @@ Cases tested:
 - Added `--help` for usage.
 
 - Used `getopts` for clean option parsing.
+
+---
+
 # Q2: Troubleshooting Internal Service Unreachability
 
 
@@ -109,6 +112,7 @@ First, I checked the system's current DNS settings using:
 cat /etc/resolv.conf
 
 ```
+![cat resolv.conf](cat-resolve.png)
 
 This showed the current nameservers configured on the system.
 
@@ -119,6 +123,8 @@ dig internal.example.com
 dig @8.8.8.8 internal.example.com
 
 ```
+![dig internal dns](dig-internal.png)
+![dig google dns](dig-google.png)
 
 ### Findings:
 
@@ -138,7 +144,7 @@ Since DNS resolution failed, I attempted to verify service reachability:
 curl http://internal.example.com
 curl https://internal.example.com
 ```
-
+![curl](curl.png
 ### Findings:
 
 -   All attempts to connect failed with "Could not resolve host" errors.
@@ -328,3 +334,4 @@ To ensure DNS settings persist across reboots:
     sudo systemctl restart systemd-resolved
     ```
    
+
